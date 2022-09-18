@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="./css/main.css">
     <script src="https://kit.fontawesome.com/798dc722ae.js" crossorigin="anonymous"></script>
@@ -14,12 +13,12 @@
 
 <body>
     <header>
-        <h1>Your Notes</h1>
+        <h1>Your Notes </h1>
     </header>
     <main>
         <section class="main-list-section row " id="main-list" aria-label="List of notes">
             <div class="col l8 offset-l2 table-wrapper">
-                <table class="centered responsive-table  highlight">
+                <table class=" responsive-table  highlight">
                     <thead>
                         <tr class="card-panel teal lighten-2">
                             <th>Name</th>
@@ -32,83 +31,12 @@
                             </th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr class="">
-                            <td><i class="fa-sharp fa-solid fa-cart-shopping category-img"></i>
-                                <span>Shopping list</span>
-                            </td>
-                            <td>
-                                <span>April 20, 2021</span>
-                            </td>
-
-                            <td>
-                                Task
-                            </td>
-                            <td>
-                                Tomatoes, bread
-                            </td>
-                            <td>
-                                3/5/2021
-                            </td>
-                            <td class="icons">
-                                <i class="fa-solid fa-pen"></i>
-                                <i class="fa-solid fa-box-archive"></i>
-                                <i class="fa-sharp fa-solid fa-trash"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><i class="fa-sharp fa-solid fa-cart-shopping category-img"></i>
-                                <span>Shopping list</span>
-                            </td>
-                            <td>
-                                <span>April 20, 2021</span>
-                            </td>
-
-                            <td>
-                                Task
-                            </td>
-                            <td>
-                                Tomatoes, bread
-                            </td>
-                            <td>
-                                3/5/2021
-                            </td>
-                            <td class="icons">
-                                <i class="fa-solid fa-pen"></i>
-                                <i class="fa-solid fa-box-archive"></i>
-                                <i class="fa-sharp fa-solid fa-trash"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><i class="fa-sharp fa-solid fa-cart-shopping category-img"></i>
-                                <span>Shopping list</span>
-                            </td>
-                            <td>
-                                <span>April 20, 2021</span>
-                            </td>
-
-                            <td>
-                                Task
-                            </td>
-                            <td>
-                                Tomatoes, bread
-                            </td>
-                            <td>
-                                3/5/2021
-                            </td>
-                            <td class="icons">
-                                <i class="fa-solid fa-pen"></i>
-                                <i class="fa-solid fa-box-archive"></i>
-                                <i class="fa-sharp fa-solid fa-trash"></i>
-                            </td>
-                        </tr>
+                    <tbody id="main-table">
                     </tbody>
                 </table>
-                <button class="waves-effect waves-light btn-large">Create Note</button>
+                <button class="waves-effect waves-light btn-large" id="show-modal">Create Note</button>
             </div>
         </section>
-
-
         <section class="archived-notes row" id="archived-notes" aria-label="The archived notes">
             <h2>The archived notes</h2>
             <table class="centered responsive-table col l8 offset-l2 highlight">
@@ -124,36 +52,13 @@
                         </th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td><i class="fa-sharp fa-solid fa-cart-shopping"></i>
-                            <span>Shopping list</span>
-                        </td>
-                        <td>
-                            <span>April 20, 2021</span>
-                        </td>
-
-                        <td>
-                            Task
-                        </td>
-                        <td>
-                            Tomatoes, bread
-                        </td>
-                        <td>
-                            3/5/2021
-                        </td>
-                        <td class="icons">
-                            <i class="fa-solid fa-boxes-packing"></i>
-                            <i class="fa-sharp fa-solid fa-trash"></i>
-                        </td>
+                <tbody id="archive-table">
                 </tbody>
-                </tr>
             </table>
-
         </section>
-
         <section class="summary-table row" id="summary-table" aria-label="Notes  summary table">
-            <table class="centered responsive-table col l8 offset-l2 highlight">
+            <h2>Notes Statistic</h2>
+            <table class="centered responsive-table col l8 offset-l2 highlight" id="statistic-table">
                 <thead>
                     <tr class="card-panel teal lighten-2">
                         <th>Note Category</th>
@@ -161,52 +66,32 @@
                         <th>Archived</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td><i class="fa-sharp fa-solid fa-cart-shopping"></i>
-                            <span>Shopping list</span>
-                        </td>
-                        <td>13</td>
-                        <td>4</td>
-                    </tr>
-                    <tr>
-                        <td><i class="fa-sharp fa-solid fa-cart-shopping"></i>
-                            <span>Shopping list</span>
-                        </td>
-                        <td>13</td>
-                        <td>4</td>
-                    </tr>
-
-                </tbody>
             </table>
         </section>
-        <div class="backdrop"></div>
-        <div class="mod">
-            <h3>Add New Note</h3>
-            <div class="row ">
-                <form class="col l8 offset-l2">
-                    <div class="input-field col l8 offset-l2">
-                        <input id="name" type="text">
-                        <label for="name"> Name</label>
-                    </div>
-                    <div class="input-field col l8 offset-l2">
-                        <select>
-                            <option value="" disabled selected>Choose your category</option>
-                            <option value="task">Task</option>
-                            <option value="thought">Random Thought</option>
-                            <option value="idea">Idea</option>
-                            <option value="quote">Quote</option>
-                        </select>
-                    </div>
-                    <div class="input-field col l8 offset-l2">
-                        <input type="date" id="date">
-                        <label for="date"> Dates</label>
-                    </div>
-                    <div class="input-field col l8 offset-l2">
-                        <textarea id="textarea" class="materialize-textarea" maxlength="200"></textarea>
-                        <label for="textarea">Content</label>
-                    </div>
-                </form>
+        <div id="backdrop"></div>
+        <div class="hide" id="modal">
+            <div class="modal-content">
+                <h3>Add New Note</h3>
+                <div class="row  ">
+                    <form class="col l12 xl12">
+                        <div class="input-field col l12">
+                            <input id="name" type="text">
+                            <label for="name"> Name</label>
+                        </div>
+                        <div class="input-field col l12" id="select-category">
+
+                        </div>
+                        <div class="input-field col l12 ">
+                            <input type="date" id="date">
+                            <label for="date"> Dates</label>
+                        </div>
+                        <div class="input-field col l12">
+                            <textarea id="textarea" class="materialize-textarea" maxlength="200"></textarea>
+                            <label for="textarea">Content</label>
+                        </div>
+                        <button class="waves-effect waves-light btn-large" id="hide-modal">Add Note</button>
+                    </form>
+                </div>
             </div>
         </div>
 

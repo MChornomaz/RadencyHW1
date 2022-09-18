@@ -2,16 +2,26 @@ i {
     cursor: pointer;
 }
 
+body {
+    position: relative;
+}
+
 .category-img {
     cursor: default;
+    font-size: 1.6rem;
+    background-color: #4db6ac;
+    padding: 10px;
+    border-radius: 50%;
+    color: white;
 }
 
 .icons i:hover {
     color: #4db6ac;
+    transform: translateY(-20%);
 }
 
-th i:hover {
-    color: white;
+th i {
+    cursor: default;
 }
 
 h1,
@@ -31,13 +41,17 @@ button {
     align-self: flex-end;
 }
 
+form {
+    width: 100%;
+}
+
 .row {
     margin-bottom: 100px;
 }
 
-.mod {
+.hide {
     padding: 5%;
-    width: 40%;
+    width: 60%;
     max-width: 500px;
     height: 600px;
     overflow: hidden;
@@ -52,4 +66,55 @@ button {
     transform: translateX(-50%);
     opacity: 0;
     top: -300%;
+}
+
+.show {
+    padding: 1%;
+    width: 40%;
+    max-width: 500px;
+    height: 650px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #4db6ac;
+    border-radius: 5%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 1;
+    top: 30%;
+    background-color: white;
+    z-index: 2;
+}
+
+.modal-content {
+    width: 80%;
+    height: 100%;
+}
+
+
+
+tr h4 {
+    width: 100%;
+    margin-left: 50%;
+}
+
+
+.backdrops {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.5;
+    z-index: 1;
+    top: 0;
+    left: 0;
+
+}
+
+.category-sell {
+    text-align: left !important;
+
 }
