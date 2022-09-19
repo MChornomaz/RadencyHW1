@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="src/styles/main.css">
     <script src="https://kit.fontawesome.com/798dc722ae.js" crossorigin="anonymous"></script>
     <title>Notes</title>
 </head>
@@ -26,7 +26,8 @@
                             <th>Category</th>
                             <th>Content</th>
                             <th>Dates</th>
-                            <th><i class="fa-solid fa-box-archive"></i>
+                            <th><i class="fa-solid fa-pen"></i>
+                                <i class="fa-solid fa-box-archive"></i>
                                 <i class="fa-sharp fa-solid fa-trash"></i>
                             </th>
                         </tr>
@@ -47,7 +48,8 @@
                         <th>Category</th>
                         <th>Content</th>
                         <th>Dates</th>
-                        <th><i class="fa-solid fa-boxes-packing"></i>
+                        <th><i class="fa-solid fa-pen"></i>
+                            <i class="fa-solid fa-boxes-packing"></i>
                             <i class="fa-sharp fa-solid fa-trash"></i>
                         </th>
                     </tr>
@@ -73,33 +75,46 @@
             <div class="modal-content">
                 <h3>Add New Note</h3>
                 <div class="row  ">
-                    <form class="col l12 xl12">
+                    <form class="col l12 xl12" id="new-note">
                         <div class="input-field col l12">
-                            <input id="name" type="text">
+                            <input id="name" type="text" class="validate" maxlength="23" required>
                             <label for="name"> Name</label>
                         </div>
                         <div class="input-field col l12" id="select-category">
-
+                            <select id="select-cat" required>
+                                <option value=" " disabled selected>Choose your category</option>
+                                <option value="Random Thought">Random Thought</option>
+                                <option value="Task">Task</option>
+                                <option value="Quote">Quote</option>
+                                <option value="Idea">Idea</option>
+                            </select>
                         </div>
                         <div class="input-field col l12 ">
-                            <input type="date" id="date">
-                            <label for="date"> Dates</label>
+                            <input type="date" id="date-start" class="validate">
+                            <label for="date-end"> Starting Date </label>
+                        </div>
+                        <div class="input-field col l12 ">
+                            <input type="date" id="date-end" class="validate">
+                            <label for="date-end"> Finish Date </label>
                         </div>
                         <div class="input-field col l12">
-                            <textarea id="textarea" class="materialize-textarea" maxlength="200"></textarea>
+                            <textarea id="textarea" class="materialize-textarea" maxlength="120" rows="4"></textarea>
                             <label for="textarea">Content</label>
                         </div>
-                        <button class="waves-effect waves-light btn-large" id="hide-modal">Add Note</button>
+                        <button type="submit" class="waves-effect waves-light btn-large" id="hide-modal">Add
+                            Note</button>
                     </form>
                 </div>
             </div>
         </div>
 
 
-    </main>
 
+
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="./js/main.js"></script>
+    <script src="/dist/js/bundle.js"></script>
 </body>
 
 </html>

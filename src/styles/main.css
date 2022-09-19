@@ -118,3 +118,30 @@ tr h4 {
     text-align: left !important;
 
 }
+
+
+.active {
+
+
+    overflow: hidden;
+
+}
+
+.active p {
+    height: 100%;
+
+}
+
+.content-cell {
+    width: 20%;
+}
+
+.collapsible {
+    border: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.collapsible-header {
+    border: none;
+}
